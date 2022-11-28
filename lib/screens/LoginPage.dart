@@ -21,7 +21,11 @@ class _LoginPageState extends State<LoginPage> {
           children: <Widget>[
             Positioned(
                 top: 0,
-                child: Image.asset('assets/images/Login.png', width: size.width*0.8,))
+                child: Image.asset(
+                  'assets/images/Login.png',
+                  width: size.width * 0.8,
+                )),
+            Positioned(child: child)
           ],
         ),
       ),

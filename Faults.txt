@@ -1,0 +1,2 @@
+1. Splash Screen Animation.
+2. Signup Button hover effect.
