@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quikey_cehpoint/components/background.dart';
 
+import '../components/DualButton.dart';
+
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
@@ -25,10 +27,14 @@ class _LoginPageState extends State<LoginPage> {
                   'assets/images/Login.png',
                   width: size.width * 0.8,
                 )),
-            Positioned(child: child)
+            Positioned(
+                top: size.height * 0.348,
+                child: DualButton(size: size, mode: 'login',))
           ],
         ),
       ),
     );
   }
 }
+
+
