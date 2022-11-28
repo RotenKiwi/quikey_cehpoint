@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:quikey_cehpoint/components/background.dart';
 import 'package:quikey_cehpoint/components/background_nobottom.dart';
 import 'package:quikey_cehpoint/components/roundedbutton.dart';
+import 'package:quikey_cehpoint/screens/LoginPage.dart';
 
 import '../components/DualButton.dart';
-import 'SignUpPage.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class SignupPage extends StatefulWidget {
+  const SignupPage({Key? key}) : super(key: key);
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<SignupPage> createState() => _SignupPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _SignupPageState extends State<SignupPage> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -26,18 +26,18 @@ class _LoginPageState extends State<LoginPage> {
             alignment: Alignment.topCenter,
             children: <Widget>[
               Positioned(
-                  top: 0,
+                  top: size.height*0.01,
                   child: Image.asset(
-                    'assets/images/Login.png',
-                    width: size.width * 0.8,
+                    'assets/images/Signup.png',
+                    width: size.width ,
                   )),
               Positioned(
                   top: size.height * 0.348,
                   child: DualButton(
                     size: size,
-                    mode: 'login',
-                    press_1: () {},
-                    press_2: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>SignupPage()));},
+                    mode: 'signup',
+                    press_1: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));},
+                    press_2: () {},
                   )),
               Positioned(
                   top: size.height * 0.44,
