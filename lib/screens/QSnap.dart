@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:quikey_cehpoint/components/PageIndicator.dart';
+import 'package:quikey_cehpoint/screens/QNews.dart';
 
 import '../components/background.dart';
 
@@ -24,7 +25,7 @@ class _QSnapState extends State<QSnap> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => QSnap()),
+                  MaterialPageRoute(builder: (context) => QNews()),
                 );
               },
               child: Stack(
