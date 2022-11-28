@@ -30,10 +30,40 @@ class Qtext extends StatelessWidget {
                       ))),
               Positioned(
                   top: size.height * 0.51,
-                  child: PageIndicator(size: size, page: 1,))
+                  child: PageIndicator(
+                    size: size,
+                    page: 1,
+                  )),
+              Positioned(
+                  top: size.height * 0.56,
+                  left: size.width * 0.078,
+                  child: Text(
+                    'QTEXT',
+                    style: TextStyle(
+                        decoration: TextDecoration.none,
+                        color: Color(0xff2b2c7f),
+                        fontFamily: 'Poppins',
+                        fontSize: size.width * 0.1,
+                        fontWeight: FontWeight.w500),
+                  )),
+              Positioned(
+                  top: size.height * 0.63,
+                  left: size.width * 0.078,
+                  child: Container(
+                    width: size.width * 0.8,
+                    child: Text(
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
+                      style: TextStyle(
+                        decoration: TextDecoration.none,
+                        color: Color(0xff2b2c7f),
+                        fontFamily: 'Poppins',
+                        fontSize: size.width * 0.05,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ))
             ],
           )),
     );
   }
 }
-
