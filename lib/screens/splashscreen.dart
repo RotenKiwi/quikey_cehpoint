@@ -90,6 +90,16 @@ class _splashscreenState extends State<splashscreen> {
                   )
                 ),
                 //Description
+                Positioned(
+                    bottom: size.height * 0.07,
+                    child: Text(
+                      'Made with love in India ❤️',
+                      style: TextStyle(
+                          fontSize: size.width * 0.04,
+                          decoration: TextDecoration.none,
+                          color: Color(0xff606060),
+                          fontFamily: 'Poppins'),
+                    )),
               ],
             )));
   }
