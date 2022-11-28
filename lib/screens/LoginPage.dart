@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quikey_cehpoint/components/background.dart';
+import 'package:quikey_cehpoint/components/background_nobottom.dart';
+import 'package:quikey_cehpoint/components/roundedbutton.dart';
 
 import '../components/DualButton.dart';
 
@@ -17,7 +19,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       body: Container(
         color: Color(0xffffffff),
-        child: background(
+        child: background_nobottom(
           size: size,
           child: Stack(
             alignment: Alignment.topCenter,
@@ -79,6 +81,62 @@ class _LoginPageState extends State<LoginPage> {
                         color: Color(0xff606060),
                       ),
                     ),
+                  )),
+              Positioned(
+                  top: size.height * 0.65,
+                  child: Column(
+                    children: <Widget>[
+                      Text(
+                        'Or',
+                        style: TextStyle(
+                          fontFamily: 'Poppins',
+                          color: Color(0xff606060),
+                          fontSize: size.width * 0.05,
+                        ),
+                      ),
+                      SizedBox(
+                        height: size.height * 0.015,
+                      ),
+                      Text(
+                        'Login with',
+                        style: TextStyle(
+                          fontFamily: 'Poppins',
+                          color: Color(0xff606060),
+                          fontSize: size.width * 0.05,
+                        ),
+                      ),
+                      SizedBox(
+                        height: size.width * 0.04,
+                      ),
+                      Row(
+                        children: <Widget>[
+                          InkWell(
+                            onTap: () {},
+                            child: Image.asset(
+                              'assets/images/facebook.png',
+                              width: size.width * 0.15,
+                            ),
+                          ),
+                          SizedBox(
+                            width: size.width * 0.15,
+                          ),
+                          InkWell(
+                            onTap: () {},
+                            child: Image.asset(
+                              'assets/images/google.png',
+                              width: size.width * 0.15,
+                            ),
+                          )
+                        ],
+                      ),
+                      SizedBox(height: size.height*0.061,),
+                      RoundedButton(
+                          text: 'LOGIN',
+                          press: () {},
+                          color: Color(0xffff6805),
+                          textColor: Color(0xfff8f9fc),
+                          length: size * 0.8)
+                    ],
                   ))
             ],
           ),
