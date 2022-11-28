@@ -40,13 +40,14 @@ class _SignupPageState extends State<SignupPage> {
                     press_2: () {},
                   )),
               Positioned(
-                  top: size.height * 0.44,
+                  top: size.height * 0.42,
                   width: size.width,
                   child: Padding(
                     padding: EdgeInsets.fromLTRB(
                         size.width * 0.07, 0, size.width * 0.07, 0),
                     child: TextFormField(
                       decoration: InputDecoration(
+                        border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
                           labelText: 'Email',
                           labelStyle: TextStyle(
                             color: Color(0xff606060),
@@ -56,13 +57,14 @@ class _SignupPageState extends State<SignupPage> {
                     ),
                   )),
               Positioned(
-                  top: size.height * 0.52,
+                  top: size.height * 0.5,
                   width: size.width,
                   child: Padding(
                     padding: EdgeInsets.fromLTRB(
                         size.width * 0.07, 0, size.width * 0.07, 0),
                     child: TextFormField(
                       decoration: InputDecoration(
+                          border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
                           labelText: 'Password',
                           labelStyle: TextStyle(
                             color: Color(0xff606060),
@@ -73,20 +75,37 @@ class _SignupPageState extends State<SignupPage> {
                   )),
               Positioned(
                   top: size.height * 0.58,
-                  right: size.width * 0.03,
-                  child: TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      'Forgot Password',
-                      style: TextStyle(
-                        fontFamily: 'Poppins',
-                        fontSize: size.width * 0.039,
-                        color: Color(0xff606060),
-                      ),
+                  width: size.width,
+                  child: Padding(
+                    padding: EdgeInsets.fromLTRB(
+                        size.width * 0.07, 0, size.width * 0.07, 0),
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+                          labelText: 'Password',
+                          labelStyle: TextStyle(
+                            color: Color(0xff606060),
+                            fontSize: size.width * 0.045,
+                            fontFamily: 'Poppins',
+                          )),
                     ),
                   )),
+              // Positioned(
+              //     top: size.height * 0.58,
+              //     right: size.width * 0.03,
+              //     child: TextButton(
+              //       onPressed: () {},
+              //       child: Text(
+              //         'Forgot Password',
+              //         style: TextStyle(
+              //           fontFamily: 'Poppins',
+              //           fontSize: size.width * 0.039,
+              //           color: Color(0xff606060),
+              //         ),
+              //       ),
+              //     )),
               Positioned(
-                  top: size.height * 0.65,
+                  top: size.height * 0.67,
                   child: Column(
                     children: <Widget>[
                       Text(
@@ -133,7 +152,7 @@ class _SignupPageState extends State<SignupPage> {
                         ],
                       ),
                       SizedBox(
-                        height: size.height * 0.061,
+                        height: size.height * 0.05,
                       ),
                       RoundedButton(
                           text: 'LOGIN',
