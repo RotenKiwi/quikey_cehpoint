@@ -35,11 +35,17 @@ class _LoginPageState extends State<LoginPage> {
                     mode: 'login',
                   )),
               Positioned(
-                  top: size.height * 0.3,
+                  top: size.height * 0.44,
+                  width: size.width,
                   child: Padding(
-                    padding: EdgeInsets.all(0.3),
-                    child: TextField(
-                      decoration: InputDecoration(labelText: 'Email'),
+                    padding: EdgeInsets.fromLTRB(
+                        size.width * 0.07, 0, size.width * 0.07, 0),
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                          labelText: 'Email',
+                          labelStyle: TextStyle(
+                              color: Color(0xff000000),
+                              fontSize: size.width * 0.05)),
                     ),
                   ))
             ],
