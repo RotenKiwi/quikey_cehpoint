@@ -30,7 +30,7 @@ class Qtext extends StatelessWidget {
                       ))),
               Positioned(
                   top: size.height * 0.51,
-                  child: PageIndicator(size: size))
+                  child: PageIndicator(size: size, page: 1,))
             ],
           )),
     );
