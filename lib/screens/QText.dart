@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quikey_cehpoint/components/background.dart';
+import 'package:quikey_cehpoint/screens/QSnap.dart';
 
 import '../components/PageIndicator.dart';
 
@@ -13,13 +14,17 @@ class Qtext extends StatelessWidget {
       color: Color(0xffffffff),
       child: background(
           size: size,
-          child: Stack(
+          child: GestureDetector(
+            onTap: (){Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => QSnap()),);},
+            child: Stack(
             alignment: Alignment.topCenter,
             children: <Widget>[
               Positioned(
                   top: 0,
                   child: Container(
-                      //color: Color(0xffffffff),
+                    //color: Color(0xffffffff),
                       height: size.height * 0.49,
                       width: size.width,
                       child: Image.asset(
@@ -63,7 +68,7 @@ class Qtext extends StatelessWidget {
                     ),
                   ))
             ],
-          )),
+          ),)),
     );
   }
 }
