@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quikey_cehpoint/components/roundedbutton.dart';
+import 'package:quikey_cehpoint/screens/QText.dart';
 
 import '../components/background.dart';
 
@@ -75,20 +76,24 @@ class _splashscreenState extends State<splashscreen> {
                       ),
                     )),
                 AnimatedPositioned(
-                  top: size.height * 0.815,
-                  duration: Duration(seconds: 2),
-                  child: AnimatedOpacity(
-                    opacity: initial ? 1.0 : 0.0,
+                    top: size.height * 0.815,
                     duration: Duration(seconds: 2),
-                    child: RoundedButton(
-                      text: 'GET STARTED',
-                      color: Color(0xffff6805),
-                      textColor: Color(0xfff8f9fc),
-                      length: size * 0.75,
-                      press: () {},
-                    ),
-                  )
-                ),
+                    child: AnimatedOpacity(
+                      opacity: initial ? 1.0 : 0.0,
+                      duration: Duration(seconds: 2),
+                      child: RoundedButton(
+                        text: 'GET STARTED',
+                        color: Color(0xffff6805),
+                        textColor: Color(0xfff8f9fc),
+                        length: size * 0.75,
+                        press: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Qtext()),
+                          );
+                        },
+                      ),
+                    )),
                 //Description
                 Positioned(
                     bottom: size.height * 0.07,
