@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../components/background.dart';
+
 class splashscreen extends StatefulWidget {
   const splashscreen({Key? key}) : super(key: key);
 
@@ -15,29 +17,31 @@ class _splashscreenState extends State<splashscreen> {
         color: Color(0xffffffff),
         height: size.height,
         width: double.infinity,
-        child: Stack(alignment: Alignment.bottomCenter, children: <Widget>[
-          Positioned(
-            child: Container(
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: AssetImage('assets/images/background.png'))),
-            ),
-          ),
-
-          Positioned(
-              child: Container(
-            width: double.infinity,
-            height: size.height * 0.035,
-            decoration: BoxDecoration(color: Color(0xff2b2c7f)),
-          )),
-          Positioned(
-              bottom: size.height * 0.035,
-              child: Container(
-                width: double.infinity,
-                height: size.height * 0.035 * 0.5,
-                decoration: BoxDecoration(color: Color(0xfffd7105)),
-              ))
-        ]));
+        child: background(
+            size: size,
+            child: Stack(
+              alignment: Alignment.center,
+              children: <Widget>[
+                Positioned(
+                    top: size.height * 0.304,
+                    child: Image.asset(
+                      'assets/images/logo.png',
+                      height: size.height * 0.35,
+                      width: size.width * 0.35,
+                    )),
+                Positioned(
+                    top: size.height * 0.55,
+                    child: Text(
+                      'QUIKEY',
+                      style: TextStyle(
+                        fontSize: size.width * 0.08,
+                        color: Color(0xff2b2c7f),
+                        decoration: TextDecoration.none,
+                        fontFamily: 'Montserrat',
+                      ),
+                    )),
+              ],
+            )));
   }
 }
+
