@@ -44,8 +44,40 @@ class _LoginPageState extends State<LoginPage> {
                       decoration: InputDecoration(
                           labelText: 'Email',
                           labelStyle: TextStyle(
-                              color: Color(0xff000000),
-                              fontSize: size.width * 0.05)),
+                            color: Color(0xff606060),
+                            fontSize: size.width * 0.047,
+                            fontFamily: 'Poppins',
+                          )),
+                    ),
+                  )),
+              Positioned(
+                  top: size.height * 0.52,
+                  width: size.width,
+                  child: Padding(
+                    padding: EdgeInsets.fromLTRB(
+                        size.width * 0.07, 0, size.width * 0.07, 0),
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                          labelText: 'Password',
+                          labelStyle: TextStyle(
+                            color: Color(0xff606060),
+                            fontSize: size.width * 0.045,
+                            fontFamily: 'Poppins',
+                          )),
+                    ),
+                  )),
+              Positioned(
+                  top: size.height * 0.58,
+                  right: size.width * 0.03,
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Forgot Password',
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: size.width * 0.039,
+                        color: Color(0xff606060),
+                      ),
                     ),
                   ))
             ],
