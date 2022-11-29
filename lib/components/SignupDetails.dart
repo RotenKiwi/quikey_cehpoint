@@ -3,6 +3,8 @@ import 'package:quikey_cehpoint/components/background.dart';
 import 'package:quikey_cehpoint/components/background_nobottom.dart';
 import 'package:quikey_cehpoint/screens/SignUpPage.dart';
 
+import 'backbutton.dart';
+
 class SignUpDetails extends StatefulWidget {
   const SignUpDetails({Key? key}) : super(key: key);
 
@@ -25,17 +27,10 @@ class _SignUpDetailsState extends State<SignUpDetails> {
               Positioned(
                   top: size.height * 0.08,
                   left: size.width * 0.06,
-                  child: Container(
-                    child: IconButton(
-                      icon: Icon(Icons.arrow_back_ios),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => SignupPage()));
-                      },
-                    ),
-                  )),
+                  child: backbutton(press: () {  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => SignupPage())); },)),
               Positioned(
                   top: size.height * 0.06,
                   child: Container(
@@ -59,3 +54,5 @@ class _SignUpDetailsState extends State<SignUpDetails> {
     ));
   }
 }
+
+

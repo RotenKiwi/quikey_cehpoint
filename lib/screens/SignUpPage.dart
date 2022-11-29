@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quikey_cehpoint/components/SignupDetails.dart';
+import 'package:quikey_cehpoint/components/backbutton.dart';
 import 'package:quikey_cehpoint/components/background.dart';
 import 'package:quikey_cehpoint/components/background_nobottom.dart';
 import 'package:quikey_cehpoint/components/roundedbutton.dart';
@@ -34,6 +35,15 @@ class _SignupPageState extends State<SignupPage> {
           child: Stack(
             alignment: Alignment.topCenter,
             children: <Widget>[
+              Positioned(
+                  top: size.height * 0.08,
+                  left: size.width * 0.06,
+                  child: backbutton(
+                    press: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => LoginPage()));
+                    },
+                  )),
               Positioned(
                   top: size.height * 0.01,
                   child: Image.asset(
@@ -70,46 +80,54 @@ class _SignupPageState extends State<SignupPage> {
                     ),
                   )),
               Positioned(
-                  top: size.height * 0.5,
-                  width: size.width*0.86,
-                  // child: Padding(
-                  //   padding: EdgeInsets.fromLTRB(
-                  //       size.width * 0.07, 0, size.width * 0.07, 0),
-                    child: TextFormField(
-                      obscureText: encrypt ? true : false,
-                      decoration: InputDecoration(
-                        contentPadding: EdgeInsets.fromLTRB(size.width * 0.07, size.height * 0.005, size.width * 0.07, size.height * 0.005),
-                          suffix: TextButton(
-                            onPressed: () {},
-                            child: Text(
-                              'Show',
-                              style: TextStyle(
-                                color: Color(0xff2b2c7f),
-                                fontSize: size.width * 0.045,
-                                fontFamily: 'Poppins',
-                              ),
-                            ),
-                          ),
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(15)),
-                          labelText: 'Password',
-                          labelStyle: TextStyle(
-                            color: Color(0xff606060),
-                            fontSize: size.width * 0.045,
-                            fontFamily: 'Poppins',
-                          )),
-                    ),
-                  ),
-              Positioned(
-                top: size.height * 0.58,
-                width: size.width*0.86,
+                top: size.height * 0.5,
+                width: size.width * 0.86,
                 // child: Padding(
                 //   padding: EdgeInsets.fromLTRB(
                 //       size.width * 0.07, 0, size.width * 0.07, 0),
                 child: TextFormField(
                   obscureText: encrypt ? true : false,
                   decoration: InputDecoration(
-                      contentPadding: EdgeInsets.fromLTRB(size.width * 0.07, size.height * 0.005, size.width * 0.07, size.height * 0.005),
+                      contentPadding: EdgeInsets.fromLTRB(
+                          size.width * 0.07,
+                          size.height * 0.005,
+                          size.width * 0.07,
+                          size.height * 0.005),
+                      suffix: TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          'Show',
+                          style: TextStyle(
+                            color: Color(0xff2b2c7f),
+                            fontSize: size.width * 0.045,
+                            fontFamily: 'Poppins',
+                          ),
+                        ),
+                      ),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15)),
+                      labelText: 'Password',
+                      labelStyle: TextStyle(
+                        color: Color(0xff606060),
+                        fontSize: size.width * 0.045,
+                        fontFamily: 'Poppins',
+                      )),
+                ),
+              ),
+              Positioned(
+                top: size.height * 0.58,
+                width: size.width * 0.86,
+                // child: Padding(
+                //   padding: EdgeInsets.fromLTRB(
+                //       size.width * 0.07, 0, size.width * 0.07, 0),
+                child: TextFormField(
+                  obscureText: encrypt ? true : false,
+                  decoration: InputDecoration(
+                      contentPadding: EdgeInsets.fromLTRB(
+                          size.width * 0.07,
+                          size.height * 0.005,
+                          size.width * 0.07,
+                          size.height * 0.005),
                       suffix: TextButton(
                         onPressed: () {},
                         child: Text(
@@ -197,7 +215,12 @@ class _SignupPageState extends State<SignupPage> {
                       ),
                       RoundedButton(
                           text: 'SIGNUP',
-                          press: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUpDetails()));},
+                          press: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SignUpDetails()));
+                          },
                           color: Color(0xffff6805),
                           textColor: Color(0xfff8f9fc),
                           length: size * 0.8)
