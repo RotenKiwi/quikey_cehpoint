@@ -7,13 +7,21 @@ import 'package:quikey_cehpoint/screens/LoginPage.dart';
 import '../components/DualButton.dart';
 
 class SignupPage extends StatefulWidget {
-  const SignupPage({Key? key}) : super(key: key);
+  const SignupPage({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<SignupPage> createState() => _SignupPageState();
 }
 
 class _SignupPageState extends State<SignupPage> {
+  bool encrypt = true;
+
+  void show() {
+    setState(() => encrypt = false);
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -26,17 +34,20 @@ class _SignupPageState extends State<SignupPage> {
             alignment: Alignment.topCenter,
             children: <Widget>[
               Positioned(
-                  top: size.height*0.01,
+                  top: size.height * 0.01,
                   child: Image.asset(
                     'assets/images/Signup.png',
-                    width: size.width ,
+                    width: size.width,
                   )),
               Positioned(
                   top: size.height * 0.348,
                   child: DualButton(
                     size: size,
                     mode: 'signup',
-                    press_1: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));},
+                    press_1: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => LoginPage()));
+                    },
                     press_2: () {},
                   )),
               Positioned(
@@ -47,7 +58,8 @@ class _SignupPageState extends State<SignupPage> {
                         size.width * 0.07, 0, size.width * 0.07, 0),
                     child: TextFormField(
                       decoration: InputDecoration(
-                        border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15)),
                           labelText: 'Email',
                           labelStyle: TextStyle(
                             color: Color(0xff606060),
@@ -58,13 +70,27 @@ class _SignupPageState extends State<SignupPage> {
                   )),
               Positioned(
                   top: size.height * 0.5,
-                  width: size.width,
-                  child: Padding(
-                    padding: EdgeInsets.fromLTRB(
-                        size.width * 0.07, 0, size.width * 0.07, 0),
+                  width: size.width*0.86,
+                  // child: Padding(
+                  //   padding: EdgeInsets.fromLTRB(
+                  //       size.width * 0.07, 0, size.width * 0.07, 0),
                     child: TextFormField(
+                      obscureText: encrypt ? true : false,
                       decoration: InputDecoration(
-                          border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+                        contentPadding: EdgeInsets.fromLTRB(size.width * 0.07, size.height * 0.005, size.width * 0.07, size.height * 0.005),
+                          suffix: TextButton(
+                            onPressed: () {},
+                            child: Text(
+                              'Show',
+                              style: TextStyle(
+                                color: Color(0xff2b2c7f),
+                                fontSize: size.width * 0.045,
+                                fontFamily: 'Poppins',
+                              ),
+                            ),
+                          ),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15)),
                           labelText: 'Password',
                           labelStyle: TextStyle(
                             color: Color(0xff606060),
@@ -72,24 +98,38 @@ class _SignupPageState extends State<SignupPage> {
                             fontFamily: 'Poppins',
                           )),
                     ),
-                  )),
+                  ),
               Positioned(
-                  top: size.height * 0.58,
-                  width: size.width,
-                  child: Padding(
-                    padding: EdgeInsets.fromLTRB(
-                        size.width * 0.07, 0, size.width * 0.07, 0),
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
-                          labelText: 'Password',
-                          labelStyle: TextStyle(
-                            color: Color(0xff606060),
+                top: size.height * 0.58,
+                width: size.width*0.86,
+                // child: Padding(
+                //   padding: EdgeInsets.fromLTRB(
+                //       size.width * 0.07, 0, size.width * 0.07, 0),
+                child: TextFormField(
+                  obscureText: encrypt ? true : false,
+                  decoration: InputDecoration(
+                      contentPadding: EdgeInsets.fromLTRB(size.width * 0.07, size.height * 0.005, size.width * 0.07, size.height * 0.005),
+                      suffix: TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          'Show',
+                          style: TextStyle(
+                            color: Color(0xff2b2c7f),
                             fontSize: size.width * 0.045,
                             fontFamily: 'Poppins',
-                          )),
-                    ),
-                  )),
+                          ),
+                        ),
+                      ),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15)),
+                      labelText: 'Repeat Password',
+                      labelStyle: TextStyle(
+                        color: Color(0xff606060),
+                        fontSize: size.width * 0.045,
+                        fontFamily: 'Poppins',
+                      )),
+                ),
+              ),
               // Positioned(
               //     top: size.height * 0.58,
               //     right: size.width * 0.03,
@@ -155,7 +195,7 @@ class _SignupPageState extends State<SignupPage> {
                         height: size.height * 0.05,
                       ),
                       RoundedButton(
-                          text: 'LOGIN',
+                          text: 'SIGNUP',
                           press: () {},
                           color: Color(0xffff6805),
                           textColor: Color(0xfff8f9fc),
