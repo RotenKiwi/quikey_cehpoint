@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quikey_cehpoint/components/RoundedField.dart';
 import 'package:quikey_cehpoint/components/background.dart';
 import 'package:quikey_cehpoint/components/background_nobottom.dart';
 import 'package:quikey_cehpoint/screens/SignUpPage.dart';
@@ -27,32 +28,24 @@ class _SignUpDetailsState extends State<SignUpDetails> {
               Positioned(
                   top: size.height * 0.08,
                   left: size.width * 0.06,
-                  child: backbutton(press: () {  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => SignupPage())); },)),
+                  child: backbutton(
+                    press: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SignupPage()));
+                    },
+                  )),
               Positioned(
-                  top: size.height * 0.06,
-                  child: Container(
+                  top: size.height * 0.07,
+                  child: RoundedField(
+                    text: 'PROFILE SETUP',
                     color: Color(0xff2b2c7f),
-                    width: size.width * 0.33,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Text(
-                        'Profile Setup',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: 'Poppins',
-                          fontWeight: FontWeight.w500,
-                          color: Color(0xffffffff),
-                        ),
-                      ),
-                    ),
+                    length: size * 0.36,
+                    textColor: Color(0xffffffff), tall: size*0.06,
                   ))
             ],
           )),
     ));
   }
 }
-
-

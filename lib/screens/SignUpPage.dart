@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quikey_cehpoint/components/SignupDetails.dart';
 import 'package:quikey_cehpoint/components/backbutton.dart';
-import 'package:quikey_cehpoint/components/background.dart';
 import 'package:quikey_cehpoint/components/background_nobottom.dart';
 import 'package:quikey_cehpoint/components/roundedbutton.dart';
 import 'package:quikey_cehpoint/screens/LoginPage.dart';
