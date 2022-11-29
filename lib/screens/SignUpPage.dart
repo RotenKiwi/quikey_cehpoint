@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quikey_cehpoint/components/SignupDetails.dart';
 import 'package:quikey_cehpoint/components/background.dart';
 import 'package:quikey_cehpoint/components/background_nobottom.dart';
 import 'package:quikey_cehpoint/components/roundedbutton.dart';
@@ -196,7 +197,7 @@ class _SignupPageState extends State<SignupPage> {
                       ),
                       RoundedButton(
                           text: 'SIGNUP',
-                          press: () {},
+                          press: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUpDetails()));},
                           color: Color(0xffff6805),
                           textColor: Color(0xfff8f9fc),
                           length: size * 0.8)
