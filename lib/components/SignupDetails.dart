@@ -5,6 +5,7 @@ import 'package:quikey_cehpoint/components/background_nobottom.dart';
 import 'package:quikey_cehpoint/components/roundedbutton.dart';
 import 'package:quikey_cehpoint/screens/SignUpPage.dart';
 
+import '../screens/test.dart';
 import 'backbutton.dart';
 
 class SignUpDetails extends StatefulWidget {
@@ -194,7 +195,10 @@ class _SignUpDetailsState extends State<SignUpDetails> {
                   child: RoundedButton(
                     color: Color(0xffff6805),
                     length: size * 0.8,
-                    press: () {},
+                    press: () {Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Test()));},
                     text: 'NEXT',
                     textColor: Color(0xfff8f9fc),
                   ))

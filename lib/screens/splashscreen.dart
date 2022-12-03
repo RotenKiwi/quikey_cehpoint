@@ -3,6 +3,7 @@ import 'package:quikey_cehpoint/components/roundedbutton.dart';
 import 'package:quikey_cehpoint/screens/QText.dart';
 
 import '../components/background.dart';
+import '../components/name.dart';
 
 class splashscreen extends StatefulWidget {
   const splashscreen({Key? key}) : super(key: key);
@@ -48,16 +49,7 @@ class _splashscreenState extends State<splashscreen> {
                 AnimatedPositioned(
                     duration: Duration(seconds: 1),
                     top: initial ? size.height * 0.40 : size.height * 0.55,
-                    child: Text(
-                      'QUIKEY',
-                      style: TextStyle(
-                        fontSize:
-                            initial ? size.width * 0.145 : size.width * 0.08,
-                        color: Color(0xff2b2c7f),
-                        decoration: TextDecoration.none,
-                        fontFamily: 'Montserrat',
-                      ),
-                    )),
+                    child: Name( size: size, )),
                 //Name
                 AnimatedPositioned(
                     duration: Duration(seconds: 1),
@@ -116,3 +108,5 @@ class _splashscreenState extends State<splashscreen> {
     //Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>getStarted()))
   }
 }
+
+
